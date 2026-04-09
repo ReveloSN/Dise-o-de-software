@@ -1,0 +1,29 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Publicacion {
+  -titulo: String
+  -precio: double
+}
+
+enum Idioma {
+  ESPANOL
+  INGLES
+  PORTUGUES
+}
+
+class Video {
+  -idioma: Idioma
+  -duracionHoras: float
+  +Video()
+  +Video(titulo: String, precio: double, idioma: Idioma, duracionHoras: float)
+  +getIdioma(): Idioma
+  +setIdioma(idioma: Idioma): void
+  +getDuracionHoras(): float
+  +setDuracionHoras(duracionHoras: float): void
+  +toString(): String
+}
+
+Video --|> Publicacion
+Video --> Idioma
+@enduml
